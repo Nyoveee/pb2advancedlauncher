@@ -1,0 +1,791 @@
+@font-face {
+    font-family: "EuropeExt";
+    src: url("./font/EuropeExt-subset.woff");
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "EuropeExt";
+    src: url("./font/EuropeExt-Bold-subset.woff");
+    font-weight: bold;
+}
+
+/* @font-face {
+    font-family: "Tahoma";
+    src: url("../public/font/Tahoma-subset.woff");
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "Tahoma";
+    src: url("../public/font/Tahoma-Bold-subset.woff");
+    font-weight: bold;
+} */
+
+:root{
+    --panelBlue: #3A4A58;
+    --panelGray: #363B42;
+    --inputColor: #65727D;
+    --greyTxt: #65727D;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: rgba(28, 27, 32, 0.85);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #28343d;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #374753;
+}
+  
+@keyframes shake {
+    10%, 90% {
+        transform: translate3d(-1px, 0, 0);
+      }
+      
+      20%, 80% {
+        transform: translate3d(2px, 0, 0);
+      }
+    
+      30%, 50%, 70% {
+        transform: translate3d(-4px, 0, 0);
+      }
+    
+      40%, 60% {
+        transform: translate3d(4px, 0, 0);
+      }
+}
+
+.blueBg{
+    background-color: var(--panelBlue);
+}
+
+.grayBg{
+    background-color: var(--panelGray);
+}
+
+#root, #body{
+    display: grid;
+    grid-template-columns: 250px 700px;
+    width: 950px;
+    height: 500px;
+    background-color: #121218;
+    font-size: 14px;
+    color: white;
+    font-family: Tahoma, Calibri;
+    font-weight: normal;
+}
+
+#sidePanel{
+    position: relative;
+    height: 100%;
+    width: 250px;
+}
+
+#imgContainer{
+    position: relative;
+    height: 80px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px #00000050;
+}
+
+#imgContainer img{
+    width: 250px;
+    position: relative;
+    top: -20px;
+    opacity: 80%;
+}
+
+#imgContainer h3{
+    position: absolute;
+    text-align: center;
+    width: 250px;
+    height: 40px;
+    z-index: 2;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    font-size: 24px;
+    font-family: "EuropeExt";
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+}
+
+#imgContainer h3 span{
+    display: block;
+    color: #b8b8b8;
+    font-weight: normal;
+    font-size: 12px;
+}
+
+#modLoaderDiv{
+    height: 100%;
+    
+}
+
+#loggedOutPanel{
+    position: relative;
+    height: 240px;
+}
+
+#panelWrapper{
+    position: absolute;
+    bottom: 15px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    height: 86px;
+    box-shadow: 0 2px 5px #00000050;
+}
+
+#inputArea{
+    margin: 40px auto 0 auto;
+    width: 85%
+}
+
+#inputArea label{
+    display: block;
+    padding: 5px 0;
+}
+
+#inputArea input{
+    height: 30px;
+}
+
+#passwordInputDiv{
+    margin-top: 13px;
+}
+
+#passwordInputDiv label{
+    position: relative;
+}
+
+#passwordDialogPrompt{
+    position: absolute;
+    right: 0;
+    cursor: pointer;
+}
+
+#passwordDialogPrompt:hover{
+    color: rgb(151, 179, 202);
+}
+
+#passwordDialogPrompt:active{
+    color: #9c9c9c;
+}
+
+#loginArea{
+    margin-top: 30px;
+}
+
+.stdBtn{
+    display: block;
+    background-color: #65727D;
+    border: 1px solid #585E6A;
+    margin: 7px auto;
+    color: white;
+    box-sizing: border-box;
+    height: 33px;
+    width: 107px;
+    cursor: pointer;
+}
+
+.stdBtn:hover{
+    background-color: #72808b;
+}
+
+.stdBtn:active{
+    background-color: #5c6770;
+}
+
+.greaterMargin{
+    margin: 15px auto;
+}
+
+.formInput{
+    background-color: #65727D;
+    border: 1px solid #585E6A;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 7px 2px;
+    color: white;
+    outline-width: 1px;
+}
+
+.formInput:focus{
+    outline-style: solid;
+    outline-color: #8c9fad;
+}
+
+.errorInput{
+    outline-style: solid;
+    outline-color: #ec8f8f;
+}
+
+#loginArea span{
+    display: block;
+    width: 100%;
+    margin-top: 5px;
+    font-size: 12px;
+    text-align: center;
+}
+
+.normalTxt{
+    color: #b8b8b8;
+}
+
+.redTxt{
+    color: #e2acac;
+}
+
+.shake{
+    animation: shake 0.5s;
+    animation-iteration-count: 1;
+}
+
+#iconContainer{
+    display: grid;
+    grid-template-columns: 33.3% 33.3% 33.3%;
+    width: 90%;
+    height: 60px;
+    margin: auto 0;
+}
+
+#iconContainer div{
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    height: 60px;
+}
+
+#iconContainer div img{
+    transition: width 0.2s;
+    width: 50px;
+    cursor: pointer;
+}
+
+#iconContainer div img:hover{
+    width: 60px;
+}
+
+#twitterIcon{
+    border-radius: 50%;
+}
+
+#mainBg{
+    background-image: url('images/Space\ Bg.webp');
+}
+
+#mainContainer{
+    width: 92%;
+    height: 450px;
+    margin: 25px auto;
+    box-sizing: content-box;
+}
+
+
+#donationPanel{
+    height: 60px;
+}
+
+#donationHeader{
+    position: relative;
+    color: white;
+    font-size: 20px;
+}
+
+#donationHeader span{
+    position: absolute;
+    right: 0;
+    font-size: 16px;
+    color: #BBBBBB;
+    top: 3px;
+    cursor: pointer;
+}
+
+#donationHeader span:hover{
+    color: #d3d3d3;
+}
+
+#donationHeader span:active{
+    color: #a3a3a3;
+}
+
+#donationBar{
+    margin-top: 8px;
+    width: 100%;
+    height: 10px;
+    background-color: white;
+    border-radius: 3px;
+}
+
+#donationBarFilled{
+    width: 1%;
+    height: 100%;
+    background-image: linear-gradient(to right, rgba(141, 255, 122, 0.5), rgba(141, 255, 122, 1));
+    border-radius: 3px;
+    transition: width 2s;
+}
+
+#newsPanel{
+    height: 390px;   
+}
+
+#newsHeader{
+    font-size: 28px;
+}
+
+#newsGridParent{
+    display: grid;
+    grid-template-columns: 35px auto;
+    margin-top: 10px;
+    height: 348px;
+}
+
+#newsBody{
+    background: rgba(28, 27, 32, 0.85);
+    padding: 0 20px;
+    overflow-y: scroll;
+}
+
+#newsBody h3{
+    margin: 15px 0;
+    font-size: 24px;
+    color: #FFF0C8;
+}
+
+#newsBody p{
+    font-size: 14px;
+    line-height: 1.2em;
+}
+
+#newsBody section{
+    padding-bottom: 10px;
+    border-bottom: 1px solid #424451;
+}
+
+#newsBody section:last-child{
+    border-bottom: none;
+}
+
+#newsPage{
+    background: rgba(36, 35, 39, 0.85);
+    overflow-y: scroll;
+    direction: rtl;
+}
+
+#newsPage button{
+    display: block;
+    background-color:rgba(33, 32, 37, 0.85);
+    border: none;
+    color: white;
+    height: 30px;
+    width: 30px;
+    font-size: 12px;
+    margin: 5px 0;
+    cursor: pointer;
+}
+
+#newsPage button:hover{
+    background-color: #2C2D31;
+}
+
+#newsPage button:active{
+    background-color: rgba(39, 39, 43, 0.85);
+}
+
+#newsPage .active{
+    background-color: #2C2D31;
+}
+
+#notiBar{
+    position: absolute;
+    bottom: 111px; /* 86px is height of wrapper, displaced 15px from bottom. adding additional 10px of padding, so 86 + 15 + 10 = 111*/
+    width: 100%;
+    font-size: 12px;
+    background-color: #5A7389;
+    padding: 5px 10px;
+    box-sizing: border-box;
+    box-shadow: 3px 2px 5px #1f1f1f28;
+}
+
+#loadGamePanel{
+    background-color: var(--panelGray);
+    height: 120px;
+}
+
+#loadGamePanel p{
+    margin: 0px;
+    padding: 12px;
+    text-align: center;
+    height: 17px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.goldClickTxt{
+    color: #FFD771;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.goldTxt{
+    font-weight: bold;
+    cursor: pointer;
+    color: #ECEDB4;
+}
+
+.goldTxt:hover{
+    color: #eff0e3;
+}
+
+.underline{
+    text-decoration: underline;
+}
+
+#loadGamePanel div{
+    height: 18px;
+    width: 90%;
+    margin: 0 auto;
+    overflow: hidden;
+    white-space: nowrap;
+    text-align: center;
+    text-overflow: ellipsis;
+}
+
+#btnSection{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+}
+
+#modLoader{
+    position: absolute;
+    display: flex;
+    background-color: #0000004b;
+    width: 950px;
+    height: 500px;
+    z-index: 3;
+    justify-content: center;
+    align-items: center;
+}
+
+#modLoaderOverlay{
+    position: relative;
+    width: 760px;
+    height: 460px;
+    background-color: var(--panelBlue);
+}
+
+#modLoaderOverlay header{
+    background-color: var(--panelGray);
+    text-align: center;
+    box-shadow: 0 2px 5px #00000050;
+}
+
+#modLoaderOverlay footer{
+    display: grid;
+    color: #BBBBBB;
+    align-items: center;
+    position: absolute;
+    height: 40px;
+    width: 100%;
+    bottom: 0;
+    background-color: var(--panelGray);
+    text-align: center;
+}
+
+#modLoaderOverlay header h1{
+    font-size: 32px;
+    margin: 0;
+    padding: 4px;
+}
+
+#modLoaderOverlay header p{
+    color:#BBBBBB;
+    margin: 0;
+    padding-bottom: 8px;
+}
+
+#closeModOverlay{
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    width: 22px;
+    height: 22px;
+    background-color: #24292F;
+    border: none;
+    color: #BBBBBB;
+    cursor: pointer;
+}
+
+#closeModOverlay:hover{
+    background-color: #48505c; 
+}
+
+#modMain{
+    width: 85%;
+    margin: 0 auto;
+}
+
+#modMain h3{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: normal;
+    text-align: center;
+    margin: 15px 0 5px;
+}
+
+#modSpan{
+    display: grid;
+    align-items: center;
+    font-size: 12px;
+    color: #BBBBBB;
+    text-align: center;
+    margin-top: 7px;
+}
+
+#gameSelected{
+    color:rgb(172, 224, 240);
+}
+
+#modDescription{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-sizing: border-box;
+    margin: 2px;
+    padding: 5px;
+    height: 58px;
+    background-color: #313D48;
+    border-radius: 6px;
+}
+
+
+#modDescription span{
+    padding: 5px;
+    max-height: 50px;
+    overflow-y: auto;
+}
+
+#modDescription span::-webkit-scrollbar-track {
+    background: #2A343E;
+}
+
+/* Handle */
+#modDescription span::-webkit-scrollbar-thumb {
+    background: #1f262e;
+}
+
+/* Handle on hover */
+#modDescription span::-webkit-scrollbar-thumb:hover {
+    background: rgb(68, 87, 102);
+}
+
+
+#tableMain{
+    display: grid;
+    height: 216px;
+    grid-template-columns: auto 250px;
+    column-gap: 10px;
+    margin-top: 15px;
+}
+
+#tableMain table{
+    width: 386px;
+    border-spacing: 0;
+    text-align: center;
+}
+
+#editMain{
+    height: 100%;
+}
+
+#tableMain thead, #tableMain tbody, #tableMain tr{
+    display: block;
+}
+
+#tableMain tbody{
+    max-height: 168px;
+    overflow-y: auto;
+}
+
+#tableMain th, #tableMain td{
+    padding: 0px;
+    height: 28px;
+}
+
+#tableMain td:first-child, #tableMain th:first-child{
+    width: 240px;
+    max-width: 240px;
+}
+
+
+#tableMain td:nth-child(2), #tableMain th:nth-child(2){
+    width: 141px;
+    max-width: 141px;
+}
+
+#tableMain td{
+    box-sizing: border-box;
+    padding: 0 12px;
+    overflow-x: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.tableHeader{
+    /* border-radius: 5px 5px 0 0; */
+    height: 28px;
+    box-sizing: border-box;
+    background-color: #313D48;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 0;
+    padding: 7px;
+    text-align: center;
+}
+
+#tableMain tr{
+    cursor: pointer;
+}
+
+#tableMain tr:nth-child(odd){
+    background-color: #323A46;
+}
+
+#tableMain tr:nth-child(even){
+    background-color: #353E4A;
+}
+
+#tableMain tr:hover{
+    background-color: #394455;
+}
+
+#tableMain tr.active{
+    background-color: #44515C;
+}
+
+/* Track */
+#tableMain ::-webkit-scrollbar-track {
+    background: #38414A;
+}
+
+/* Handle */
+#tableMain ::-webkit-scrollbar-thumb {
+    background: #2A343E;
+}
+
+/* Handle on hover */
+#tableMain ::-webkit-scrollbar-thumb:hover {
+    background: rgb(68, 87, 102);
+}
+
+.header{
+    border-radius: 5px 5px 0 0;
+    background-color: #313D48 !important;
+}
+
+#editPanel{
+    display: grid;
+    height: calc(100% - 28px);
+    box-sizing: border-box;
+    background-color: #353E4A;
+    grid-template-columns: 65px calc(180px - 4px - 20px); /* 175 is original auto length, 7 is column gap and 20 is 2x padding */
+    grid-template-rows: 23px 23px auto 28px;
+    column-gap: 7px;
+    row-gap: 10px;
+    padding: 10px 10px 4px;
+    font-size: 13px;
+}
+
+#editPanelContainer{
+    position: relative;
+    height: 168px;
+}
+
+#editPanel input{
+    padding: 0 3px;
+}
+
+#editPanel label{
+    line-height: 23px; /* line-height = height of container center text hack */
+    text-align: right;
+    vertical-align: center;
+}
+
+/* #fileName{
+    display: grid;
+    column-gap: 8px;
+} */
+
+#fileName button{
+    margin: 0;
+    margin-bottom: 5px;
+    border: 1px solid #585E6A;
+    padding: 0;
+    color: white;
+    background-color: #353E4A;
+    cursor: pointer;
+}
+
+#fileName button:hover{
+    background-color: #49525f;
+}
+
+#fileName button:active{
+    background-color: #333a42;
+}
+
+#fileName div{
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    line-height: 23px;
+    white-space: nowrap;
+}
+
+#editPanel textarea {
+    resize: none;
+    padding: 3px;
+}
+
+.loadingCursor {
+    cursor: wait !important;
+}
+
+#loadingMod{
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.playBtn{
+    background-color: #607688;
+}
+
+.disabled{
+    cursor: wait;
+    background-color: #58636b;
+}
+
+.disabled:hover{
+    background-color: #58636b;
+}

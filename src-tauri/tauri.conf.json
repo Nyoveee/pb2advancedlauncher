@@ -1,0 +1,103 @@
+{
+  "$schema": "../node_modules/@tauri-apps/cli/schema.json",
+  "build": {
+    "beforeBuildCommand": "npm run build",
+    "beforeDevCommand": "npm run start",
+    "devPath": "http://localhost:3000",
+    "distDir": "../build"
+  },
+  "package": {
+    "productName": "PB2 Mod Launcher",
+    "version": "0.1.0"
+  },
+  "tauri": {
+    "allowlist": {
+      "shell": {
+        "open": "^",
+        "sidecar": true,
+        "scope": [
+          { 
+            "name": "bin/flashplayer", 
+            "sidecar": true, 
+            "args": [{
+              "validator": "[.+]?"
+            }]
+          }
+        ]
+      },
+      "fs": {
+        "createDir": true,
+        "exists": true,
+        "readFile": true,
+        "writeFile": true,
+        "readDir": true,
+        "scope": ["$APPDATA/*"]
+      },
+      "http": {
+        "request": true,
+        "scope": ["https://www.plazmaburst2.com/*"]
+      },
+      "path": {
+        "all": true
+      },
+      "dialog": {
+        "ask": true
+      },
+      "process": {
+        "relaunch": true
+      },
+      "os": {
+        "all": true
+      }
+    },
+    "bundle": {
+      "active": true,
+      "category": "DeveloperTool",
+      "copyright": "",
+      "deb": {
+        "depends": []
+      },
+      "externalBin": [
+        "bin/flashplayer"
+      ],
+      "icon": [
+        "icons/favicon.ico"
+      ],
+      "identifier": "nyove.pb2modlauncher",
+      "longDescription": "",
+      "macOS": {
+        "entitlements": null,
+        "exceptionDomain": "",
+        "frameworks": [],
+        "providerShortName": null,
+        "signingIdentity": null
+      },
+      "resources": [],
+      "shortDescription": "",
+      "targets": "all",
+      "windows": {
+        "certificateThumbprint": null,
+        "digestAlgorithm": "sha256",
+        "timestampUrl": "",
+        "webviewInstallMode": {
+          "type": "embedBootstrapper"
+        }
+      }
+    },
+    "security": {
+      "csp": null
+    },
+    "updater": {
+      "active": false
+    },
+    "windows": [
+      {
+        "fullscreen": false,
+        "height": 500,
+        "resizable": false,
+        "title": "PB2 Mod Launcher",
+        "width": 950
+      }
+    ]
+  }
+}

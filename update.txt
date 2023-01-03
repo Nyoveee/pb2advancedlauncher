@@ -1,0 +1,16 @@
+features left to do
+- error handling for txt files
+
+existing features
+- saving login credentials
+
+new features
+- cross platform
+- loading of mod
+
+- minimised file size and ram usage
+> tauri instead of electron
+> resize images and convert to webp
+
+design choices
+- window will be not resizable (makes designing a lot easier, mobile responsive work will be redunctant)
