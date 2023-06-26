@@ -1,7 +1,0 @@
-things left to do:
-- move retrieveAccount code from accountTable to SidePanel. (or create an component inbetween)
-- show account table based on json
-- set up selection system of accounts (no account selected, 1 account selected)
-- show password based on account selection
-- changing login credentials unselect the account
-- login saves the credentials

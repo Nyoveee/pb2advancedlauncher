@@ -4,7 +4,6 @@ import LoggedInPanel from './SidePanel/LoggedInPanel.js'
 import LoggedOutPanel from './SidePanel/LoggedOutPanel.js'
 import NotiBar from './SidePanel/NotiBar'
 
-
 import DiscordIcon from './images/Discord Logo.webp'
 import PatreonIcon from './images/Patreon Logo.webp'
 import TwitterIcon from './images/Eric Logo.webp'
@@ -105,6 +104,11 @@ const updateAccountFile = async (obj) => {
     const accDir = await join(appDir, 'data')
     const filepath = await join(accDir, 'account.json')
 
+    //check if json file exist.
+    if(!await exists(filepath)){
+        await writeTextFile(filepath, "[]")
+    }
+
     writeTextFile(filepath, JSON.stringify(obj))
 }
 
@@ -180,7 +184,7 @@ const SidePanel = (props) => {
 
     //handler for ManageAccount child component to setActive
     const setActiveHandler = (login) => {
-        setActive(login)
+        getIndex(login, accounts) === -1 ? setActive('') : setActive(login)
     }
 
     //change state in accord to which image is hovered over (msg).
@@ -294,7 +298,7 @@ const SidePanel = (props) => {
 
     //choosing which panel to display based on whether user logged in.
     const panelMainBody = loggedIn ? 
-    <LoggedInPanel updateGame={props.updateGame} game={props.game} showLoaderHandle={props.showLoaderHandle} credentials={credentials} handleLogOut={handleLogOut} /> : 
+    <LoggedInPanel updateGame={props.updateGame} game={props.game} showModInterface={props.showModInterface} showLoaderHandle={props.showLoaderHandle} credentials={credentials} handleLogOut={handleLogOut} /> : 
     <LoggedOutPanel toShowAccountPanel={showAccountPanel} showAccount={showManageAccountPanel} hideAccount={hideManageAccountPanel} handleChange={handleChange} credentials={credentials} handleLogIn={handleLogIn} hint={hintState} hoverHandle={hoverHandle} mouseOutHandle={mouseOutHandle}/>
 
     return (

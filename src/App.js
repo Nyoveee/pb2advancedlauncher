@@ -11,6 +11,7 @@ import { ask } from '@tauri-apps/api/dialog'
 import { relaunch } from '@tauri-apps/api/process'
 import { listen } from '@tauri-apps/api/event'
 import { open } from '@tauri-apps/api/shell'
+import MoreInterface from './MoreInterface.js'
 
 const promptRestart = async (text) => {
     if(await ask(text)){
@@ -242,12 +243,20 @@ const App = () => {
     //boolean indicating whether to show mod loader overlay
     const [showLoader, setShowLoader] = useState(false)
 
+    //boolean indicating whether to show more interface overlay
+    const [moreInterface, setMoreInterface] = useState(false)
+
     //to indicate which game is selected
     const [active, setActive] = useState(0)
 
     //close / open the mod loader menu
     const showLoaderHandle = async (toShow) => {
         setShowLoader(toShow)
+    }
+
+    //close / open the mod loader menu
+    const showModInterface = (toShow) => {
+        setMoreInterface(toShow)
     }
     
     //handles click event when one selects a new mod. 
@@ -325,10 +334,12 @@ const App = () => {
     const showLoaderElement = showLoader ? 
     <ModLoader openModFolder={openModFolder} active={active} games={games} onChange={onChange} handleClick={handleClick} showLoaderHandle={showLoaderHandle} /> 
     : null
+
+    const showModElement = moreInterface ? <MoreInterface showModInterface={showModInterface}/> : null
     
     return (
         <div id='body'>
-            {showLoaderElement}<SidePanel updateGame={updateGame} game={games[active]} showLoaderHandle={showLoaderHandle}/> <MainContainer /> 
+            {showLoaderElement}{showModElement}<SidePanel updateGame={updateGame} game={games[active]} showModInterface={showModInterface} showLoaderHandle={showLoaderHandle}/> <MainContainer /> 
         </div>
     )
 }

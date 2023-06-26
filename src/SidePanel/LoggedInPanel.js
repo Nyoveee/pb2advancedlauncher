@@ -165,7 +165,7 @@ const LoggedInPanel = (props) => {
     if(launching) updateBtnClass += ' disabled'
 
     let playBtnClass = updateBtnClass + ' playBtn'
-    
+
     return (
         <div id="loggedInPanel">
             <LoadGamePanel game={props.game} showLoaderHandle={props.showLoaderHandle} login={props.credentials.login}/>
@@ -174,7 +174,7 @@ const LoggedInPanel = (props) => {
                     <StdBtn className={playBtnClass} handleClick={launchGame} text={launching ? 'Launching...' : 'Play ! '}/>
                     <StdBtn className={'greaterMargin'} handleClick={props.handleLogOut} text='Log Out'/>
                     <StdBtn className={updateBtnClass} handleClick={handleUpdate} text={updateDisabled ? updatingTxt : 'Update Game'}/>
-                    <StdBtn className={'greaterMargin'} handleClick={props.handleLogOut} text='More'/>
+                    <StdBtn className={'greaterMargin'} handleClick={() => props.showModInterface(true)} text='More'/>
                 </div>
             </div>
         </div>

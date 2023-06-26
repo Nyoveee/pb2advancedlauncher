@@ -10,18 +10,6 @@
     font-weight: bold;
 }
 
-/* @font-face {
-    font-family: "Tahoma";
-    src: url("../public/font/Tahoma-subset.woff");
-    font-weight: normal;
-}
-
-@font-face {
-    font-family: "Tahoma";
-    src: url("../public/font/Tahoma-Bold-subset.woff");
-    font-weight: bold;
-} */
-
 :root{
     --panelBlue: #3A4A58;
     --panelGray: #363B42;
@@ -472,7 +460,7 @@
     height: 200px;
 }
 
-#modLoader{
+#modLoader, #moreInterface{
     position: absolute;
     display: flex;
     background-color: #0000004b;
@@ -483,20 +471,20 @@
     align-items: center;
 }
 
-#modLoaderOverlay{
+#modLoaderOverlay, #moreInterfaceOverlay{
     position: relative;
     width: 760px;
     height: 460px;
     background-color: var(--panelBlue);
 }
 
-#modLoaderOverlay header{
+#modLoaderOverlay header, #moreInterfaceOverlay header{
     background-color: var(--panelGray);
     text-align: center;
     box-shadow: 0 2px 5px #00000050;
 }
 
-#modLoaderOverlay footer{
+#modLoaderOverlay footer, #moreInterfaceOverlay footer{
     display: grid;
     color: #BBBBBB;
     align-items: center;
@@ -508,19 +496,19 @@
     text-align: center;
 }
 
-#modLoaderOverlay header h1{
+#modLoaderOverlay header h1, #moreInterfaceOverlay h1{
     font-size: 32px;
     margin: 0;
     padding: 4px;
 }
 
-#modLoaderOverlay header p{
+#modLoaderOverlay header p, #moreInterfaceOverlay p{
     color:#BBBBBB;
     margin: 0;
     padding-bottom: 8px;
 }
 
-#closeModOverlay{
+#closeModOverlay, #closeMoreOverlay{
     position: absolute;
     right: 5px;
     top: 5px;
@@ -532,7 +520,7 @@
     cursor: pointer;
 }
 
-#closeModOverlay:hover{
+#closeModOverlay:hover, #closeMoreOverlay:hover{
     background-color: #48505c; 
 }
 
@@ -1006,4 +994,76 @@
     font-size: 12px;
     color: #BBBBBB;
     width: 90%;
+}
+
+#moreContainer{
+    width: 72%;
+    margin: 12px auto 22px;
+    /* minus off the margins */
+    height: calc(350px - 22px - 22px);
+    overflow-y: auto;
+}
+
+#moreContainer::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+/* Track */
+#moreContainer::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0);
+}
+
+/* Handle */
+#moreContainer::-webkit-scrollbar-thumb {
+    background: #35414b;
+}
+
+/* Handle on hover */
+#moreContainer::-webkit-scrollbar-thumb:hover {
+    background: #2e3841;
+}
+
+.bannerImgRow{
+    display: grid;
+    grid-template-columns: 20% 80%;
+    height: 75px;
+    padding: 10px 16px 10px 0;
+}
+
+.bannerLeft{
+    grid-template-columns: 20% 80%;
+}
+
+.bannerRight{
+    grid-template-columns: 80% 20%;
+}
+
+.bannerImg{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bannerImg img{
+    height: 60px;
+    transition: 0.7s;
+}
+
+.bannerImg img:hover{
+    height: 75px;
+}
+
+.bannerTxt{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bannerTxt span{
+    color: #dfdfdf !important;
+    position: relative;
+    top: 5px;
+    color: white;
+    text-align: center;
 }
