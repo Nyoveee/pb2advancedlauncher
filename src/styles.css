@@ -814,15 +814,16 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    z-index: 1;
     transition: background-color 1s;
 }
 
 .darkenBg{
+    z-index: 1;
     background-color: #00000065;
 }
 
 .undarkenBg{
+    z-index: -1;
     background-color: #00000000;
 }
 

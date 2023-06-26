@@ -306,7 +306,7 @@ const SidePanel = (props) => {
                 <PanelWrapper hoverHandle={hoverHandle} mouseOutHandle={mouseOutHandle}/>
             </aside>
             <ManageAccount updateAccountFile={updateAccountFile} active={active} setActive={setActiveHandler} accounts={accounts} setAccounts={setAccountHandler} loggedIn={loggedIn} handleAccountSwitch={handleAccountSwitch} accountPanel={accountPanel}/>
-            { showAccountPanel ? <div className={darkenBg} id="darkenBg"/> : <></>}
+           <div className={darkenBg} id="darkenBg"/>
         </>
     )
 }

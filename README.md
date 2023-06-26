@@ -43,7 +43,7 @@ This installs all the dependencies for our frontend (React). Next, we run
 ```
 npm run tauri dev
 ```
-to install all the rust dependencies required and launch our application. (this may a take while.)
+to install all the rust dependencies required and launch our application. (this may a take while.) Running this for the first time may result in an error. Don't worry, try running it again and it should work now.
 
 ## Running
 To only run the frontend of the code, run
