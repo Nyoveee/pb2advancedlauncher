@@ -146,7 +146,7 @@ const LoggedInPanel = (props) => {
             'color: white; background-color: black;',
             'color: yellow; background-color: black;'
         )
-
+        console.log("Flash path: ", filepath);
         await invoke("launch_game", {"params": `${filepath}${args}`})
         //load parameters and launch the game!
         //const command = Command.sidecar('bin/flashplayer', [`${filepath}${args}`])
@@ -171,9 +171,10 @@ const LoggedInPanel = (props) => {
             <LoadGamePanel game={props.game} showLoaderHandle={props.showLoaderHandle} login={props.credentials.login}/>
             <div id="btnSection">
                 <div>
-                    <StdBtn className={playBtnClass} handleClick={launchGame} text={launching ? 'Launching..' : 'Play!'}/>
+                    <StdBtn className={playBtnClass} handleClick={launchGame} text={launching ? 'Launching...' : 'Play ! '}/>
                     <StdBtn className={'greaterMargin'} handleClick={props.handleLogOut} text='Log Out'/>
                     <StdBtn className={updateBtnClass} handleClick={handleUpdate} text={updateDisabled ? updatingTxt : 'Update Game'}/>
+                    <StdBtn className={'greaterMargin'} handleClick={props.handleLogOut} text='More'/>
                 </div>
             </div>
         </div>

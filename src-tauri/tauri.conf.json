@@ -7,7 +7,7 @@
     "distDir": "../build"
   },
   "package": {
-    "productName": "PB2 Mod Launcher",
+    "productName": "PB2 Advanced Launcher",
     "version": "0.1.0"
   },
   "tauri": {

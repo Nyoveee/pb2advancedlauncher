@@ -89,9 +89,11 @@
 }
 
 #sidePanel{
+    z-index: 3;
     position: relative;
     height: 100%;
     width: 250px;
+    box-shadow: 2px 0px 7px #00000040;
 }
 
 #imgContainer{
@@ -113,7 +115,7 @@
     text-align: center;
     width: 250px;
     height: 40px;
-    z-index: 2;
+    z-index: 3;
     top: 0;
     bottom: 0;
     margin: auto 0;
@@ -136,11 +138,6 @@
     
 }
 
-#loggedOutPanel{
-    position: relative;
-    height: 240px;
-}
-
 #panelWrapper{
     position: absolute;
     bottom: 15px;
@@ -153,7 +150,7 @@
 }
 
 #inputArea{
-    margin: 40px auto 0 auto;
+    margin: 22px auto 0 auto;
     width: 85%
 }
 
@@ -189,7 +186,7 @@
 }
 
 #loginArea{
-    margin-top: 30px;
+    margin-top: 22px;
 }
 
 .stdBtn{
@@ -213,7 +210,7 @@
 }
 
 .greaterMargin{
-    margin: 15px auto;
+    margin: 12px auto;
 }
 
 .formInput{
@@ -312,9 +309,10 @@
     position: absolute;
     right: 0;
     font-size: 16px;
-    color: #BBBBBB;
+    color: #67eb84;
     top: 3px;
     cursor: pointer;
+    font-weight: 900;
 }
 
 #donationHeader span:hover{
@@ -432,7 +430,7 @@
     margin: 0px;
     padding: 12px;
     text-align: center;
-    height: 17px;
+    height: 20px;
     overflow: hidden;
     text-overflow: ellipsis;
 }
@@ -480,7 +478,7 @@
     background-color: #0000004b;
     width: 950px;
     height: 500px;
-    z-index: 3;
+    z-index: 4;
     justify-content: center;
     align-items: center;
 }
@@ -577,7 +575,6 @@
     background-color: #313D48;
     border-radius: 6px;
 }
-
 
 #modDescription span{
     padding: 5px;
@@ -788,4 +785,224 @@
 
 .disabled:hover{
     background-color: #58636b;
+}
+
+.manageBtn{
+    margin-top: 20px;
+    width: 130px;
+}
+
+#manageAccountsPanel{
+    position: absolute;
+    width: 300px;
+    height: 500px;
+    background-color: #43525F;
+    z-index: 2;
+    box-shadow: 0 5px 10px #00000080;
+    transition: left 1s;
+}
+
+.showAccountPanel{
+    left: 250px; 
+}
+
+.hideAccountPanel{
+    left: -50px;
+}
+
+#darkenBg{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    transition: background-color 1s;
+}
+
+.darkenBg{
+    background-color: #00000065;
+}
+
+.undarkenBg{
+    background-color: #00000000;
+}
+
+#accountHeader{
+    background-color: #3A4A58;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    padding-top: 7px;
+}
+
+#accountHeader div{
+    width: 95%;
+    margin: 0 auto;
+}
+
+#accountHeader span, #accountHeaderTxt{
+    text-align: center;
+    display: block;
+    font-size: 12px;
+    color: #BBBBBB;
+    font-weight: normal;
+    padding: 5px 0 10px;
+}
+
+#accountHeaderTxt{
+    color: #f7f7f7;
+    padding: 7px 0 5px;
+}
+
+#accountPanel{
+    margin: 20px 0 10px;
+}
+
+#accountTable{
+    display: block;
+    font-size: 13px;
+    width: 85%;
+    text-align: center;
+    margin: 0 auto;
+    border-spacing: 0;
+    border-collapse: collapse;
+    background-color: #313D48;
+}
+
+#accountTable span{
+    width: 90%;
+    display: block;
+    margin: 0 auto;
+    font-size: 12px;
+    color: #BBBBBB;
+    padding: 7px 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* accountTable first tr*/
+#accountTableHeader{
+    background-color: #313D48;
+    padding: 7px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 7px 7px 0 0;
+}
+
+#accountTable thead, #accountTable tbody,  #accountTable td{
+    display: block;
+}
+
+/* all tr rows including header */
+#accountTable tr{
+    display: flex;
+    gap: 0;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 29px;
+    padding: 0;
+    max-width: 100%;
+}
+
+/* tr rows excluding header */
+#accountTable tbody tr{
+    color: #dbdbdb;
+}
+
+#accountTable td{
+    width: 90%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#accountTable tbody{
+    max-height: 174px;
+    overflow-y: auto;
+}
+
+#accountTable tbody tr:nth-child(odd){
+    background-color: #323A46;
+}
+
+#accountTable tbody tr:nth-child(even){
+    background-color: #353E4A;
+}
+
+.accountSelectable{
+    cursor: pointer;
+}
+
+.accountSelected{
+    background-color: #44515C !important;
+}
+
+.accountSelectable:hover{
+    background-color: #394455 !important;
+}
+
+.accountSelectable:active{
+    background-color: #44515C !important;
+}
+
+#savedPass{
+    width: 85%;
+    margin: 0 auto;
+    margin-bottom: 12px;
+}
+
+#savedPass label{
+    display: block;
+    text-align: center;
+    font-size: 16px;
+    padding: 8px;
+}
+
+#savedPassInputFlex{
+    display: grid;
+    grid-template-columns: auto 30px;
+    column-gap: 7px;
+}
+
+#savedPass input{
+    font-size: 14px;
+    height: 30px;
+    text-align: center;
+}
+
+#savedPassReveal{
+    background-color: #65727D;
+    border: 1px solid #585E6A;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+#savedPassReveal:hover{
+    background-color: #6a7781;
+}
+
+#savedPassReveal:active{
+    background-color: #5b6770;
+}
+
+#accountFooter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #3A4A58;
+    position: absolute;
+    bottom: 0;
+    height: 40px;
+    width: 100%;
+}
+
+#accountFooter p{
+    margin: 0;
+    text-align: center;
+    font-size: 12px;
+    color: #BBBBBB;
+    width: 90%;
 }

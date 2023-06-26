@@ -41,6 +41,7 @@ const mainStart = async () => {
 
     await updateGame()
     const updatedJson = await updateMod()
+    await checkAccounts()
 
     return updatedJson
 }
@@ -199,6 +200,21 @@ const updateMod = async () => {
     }
 
     return updatedJson
+}
+
+// 1. Check if the credentials JSON file exist (list of objects, with key of login & password.). If it doesn't, create a new JSON file. 
+// 2. Retrieve and parse JSON information in JSON file.
+const checkAccounts = async () => {
+    console.log('Checking the accounts json file..')
+
+    const appDir = await appConfigDir()
+    const accDir = await join(appDir, 'data')
+    const filepath = await join(accDir, 'account.json')
+
+    //1. check if json file exist.
+    if(!await exists(filepath)){
+        await writeTextFile(filepath, "[]")
+    }
 }
 
 //saves new changes to mod json

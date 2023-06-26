@@ -17,7 +17,7 @@ tauri-build = { version = "1.2.1", features = [] }
 [dependencies]
 serde_json = "1.0"
 serde = { version = "1.0", features = ["derive"] }
-tauri = { version = "1.2.1", features = ["dialog-ask", "fs-create-dir", "fs-exists", "fs-read-dir", "fs-read-file", "fs-write-file", "http-request", "os-all", "path-all", "process-relaunch", "shell-open", "shell-sidecar"] }
+tauri = { version = "1.2.1", features = ["dialog-ask", "fs-create-dir", "fs-exists", "fs-read-dir", "fs-read-file", "fs-write-file", "http-request", "os-all", "path-all", "process-relaunch", "shell-open", "shell-sidecar", "windows7-compat"] }
 reqwest = { version = "0.11", features = ["blocking"] }
 notify = "5.0.0"
 directories = "4.0"
