@@ -15,6 +15,10 @@ A fixed 950 x 500 webview2 window, it has a better GUI (in my opinion anyways), 
 
 This application is made with Tauri, with ReactJs as it's frontend. Tauri is a lightweight alternative to Electron, requiring much less filesize and RAM while enabling the usage of HTML, CSS & JS as it's frontend.
 
+## Download here
+[Windows 7 & 10 (both 32bit and 64bit)](https://github.com/Nyoveee/pb2advancedlauncher/releases/download/v1.0.0/PB2.Advanced.Launcher_0.1.0_x86_en-US.msi)
+
+Versions for other platforms will hopefully be released soon.
 ## Prerequisities
 As this application uses Tauri, refer to the [Tauri's prerequisitie webpage](https://tauri.app/v1/guides/getting-started/prerequisites/) for installation of Rust as well as certain system dependencies required in running this app in development mode.
 1. Microsoft Visual Studio C++ Build Tools
