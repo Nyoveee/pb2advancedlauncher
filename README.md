@@ -59,3 +59,6 @@ To run the whole application, run
 ```
 npm run tauri dev
 ```
+
+## Compilation
+Currently, I use [Tauri Actions](https://tauri.app/v1/guides/building/cross-platform/) to help in automate cross platform compilation.
