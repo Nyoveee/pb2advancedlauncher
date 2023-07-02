@@ -19,7 +19,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "dev" : "react-scripts dev",
-    "tauri": "tauri"
+    "tauri": "tauri",
+    "tauriBuild": "tauri build --target i686-pc-windows-msvc"
   },
   "eslintConfig": {
     "extends": [
