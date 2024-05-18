@@ -17,10 +17,13 @@ const NewsPage = (props) => {
     //change active page when there are any props change (thru changing page)
     //at start, activePage is undefined.
     useEffect(() => {
+        // at start
         if(!activePage) {
             setAPage({page: 1, isLoading: false})
             return
         }
+
+        // at prop change, when new news info is loaded.
         setAPage({page: activePage, isLoading: false})
     }, [activePage])
 
