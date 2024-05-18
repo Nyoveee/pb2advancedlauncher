@@ -5,7 +5,7 @@ import { relaunch } from '@tauri-apps/api/process'
 import { type } from '@tauri-apps/api/os'
 import { invoke } from '@tauri-apps/api'
 
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import LoadGamePanel from './LoggedIn/LoadGamePanel.js'
 import StdBtn from './LoggedIn/StdBtn.js'
 
@@ -18,7 +18,7 @@ const promptRestart = async (text) => {
 
 const LoggedInPanel = (props) => {
     //disables the update button while the game is ongoing.
-    const [ updateDisabled, setUpdateDisabled ] = useState(false)
+    const [ updateDisabled, setUpdateDisabled ] = useState(true)
     const [ launching, setLaunching ] = useState(false)
     const [ updatingTxt, setUpdatingTxt ] = useState('Updating')
 
@@ -125,6 +125,7 @@ const LoggedInPanel = (props) => {
         }
         //mod game
         else{
+            //args = `?l=${props.credentials.login}&p=${props.credentials.password}&from_standalone=1`
             filepath = await join(appDir, 'mod', game.filename)
 
             //mod file doesn't exist
@@ -157,6 +158,13 @@ const LoggedInPanel = (props) => {
             setLaunching(false)
         }, 1500)
     }
+
+    useEffect(() => {
+        //wait till the game has been loaded.
+        if(props.game){
+            setUpdateDisabled(false)
+        }
+    })
 
     //class names for loading css for play btn
     let updateBtnClass = 'greaterMargin'
